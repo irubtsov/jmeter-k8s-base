@@ -96,6 +96,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: irubtsov/jmeter-k8s-base:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/jmeter-k8s-base:latest
         build-args: JMETER_VERSION=${{ needs.get-latest-release.outputs.release }}
         platforms: linux/amd64,linux/arm64
