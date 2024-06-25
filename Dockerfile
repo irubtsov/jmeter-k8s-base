@@ -40,6 +40,7 @@ RUN curl ${CURL_OPTS} --location --output "${JMETER_PLUGIN_PATH}" "${JMETER_PLUG
     java -classpath "${JMETER_PLUGIN_PATH}" org.jmeterplugins.repository.PluginManagerCMDInstaller 
 
 RUN curl ${CURL_OPTS} --location --output "${JMETER_INSTALLATION_PATH}/lib/jolokia-java-agent.jar"  "https://search.maven.org/remotecontent?filepath=org/jolokia/jolokia-jvm/1.7.2/jolokia-jvm-1.7.2.jar"
+RUN curl ${CURL_OPTS} --location --output "${JMETER_HOME}lib/ext/jmeter-plugins-influxdb2-listener-2.7.jar"  "https://github.com/mderevyankoaqa/jmeter-influxdb2-listener-plugin/releases/download/v2.7/jmeter-plugins-influxdb2-listener-2.7.jar"
 
 ## Setting users &&  directory and right
 RUN mkdir /report &&  \
