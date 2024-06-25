@@ -64,7 +64,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: rbillon59/jmeter-k8s-base:${{ matrix.releases }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/jmeter-k8s-base:${{ matrix.releases }}
         build-args: JMETER_VERSION=${{ matrix.releases }}
         platforms: linux/amd64,linux/arm64
 
